@@ -10,7 +10,9 @@ class DiffChecker:
         file1 = open(self.path1)
         file2 = open(self.path2)
         lines1 = file1.readlines()
+        lines1 = list(map(lambda x: x.strip(), lines1))
         lines2 = file2.readlines()
+        lines2 = list(map(lambda x: x.strip(), lines2))
         file1.close()
         file2.close()
         errors = 0
