@@ -1,6 +1,5 @@
 import os
 import sys
-import tqdm
 
 class DiffChecker:
     def __init__(self, path1, path2):
@@ -15,7 +14,7 @@ class DiffChecker:
         file1.close()
         file2.close()
         errors = 0
-        for line in tqdm(lines1):
+        for line in lines1:
             if (line not in lines2):
                 print(f'<<<{line}')
                 errors += 1
